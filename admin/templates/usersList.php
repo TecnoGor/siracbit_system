@@ -1,4 +1,7 @@
-<?php require_once('modals/modalAddUser.php');?>
+<?php 
+    require_once('modals/modalAddUser.php');
+    require_once('modals/modalEditUser.php');    
+?>
 
 <div class="col-md-12">
 
@@ -19,24 +22,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr> -->
                 <?php 
 
                     include('../includes/conn.php');
@@ -49,10 +34,11 @@
                     foreach ($usuarios as $usuario) { 
                         echo "<tr>";
                         echo "<td>".$i."</td>";
+                        echo '<input type="hidden"'.' value="'.$usuario->usuario_id.'">';
                         echo "<td>".$usuario->nombre."</td>";
                         echo "<td>".$usuario->usuario."</td>";
                         echo "<td>".$usuario->nombre_rol."</td>";
-                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" href="#"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" href="#"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
+                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditUser('. $usuario->usuario_id .')"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" href="#"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
                         $i++;
                     }
                 ?>

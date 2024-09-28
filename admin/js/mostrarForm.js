@@ -65,6 +65,62 @@ function modalAddUser(){
 	$('#modalAddUser').modal('show');
 }
 
+function modalEditUser(a){
+	var id_usuario = a;
+
+	$.ajax({
+		url: './includes/requestUsers.php',
+		method: 'POST',
+		data: {
+			id: id_usuario
+		},
+		success: function(data){
+			
+			var data = JSON.parse(data);
+
+			if(data.status){
+				document.querySelector('#idOculto').value = data.data.usuario_id;
+				document.querySelector('#nameUserEdit').value = data.data.nombre;
+				document.querySelector('#userEdit').value = data.data.usuario;
+				document.querySelector('#rolEdit').value = data.data.rol;
+				document.querySelector('#estadoEdit').value = data.data.estado;
+
+				$('#modalEditUser').modal('show');
+
+			}else {
+				swal('Atencion',data.msg,'error');
+			}
+		}
+	})
+}
+
+function editUser() {
+	var idusuario = document.getElementById('idOculto').value;	
+	var nombre = document.getElementById('nameUserEdit').value;
+	var user = document.getElementById('userEdit').value;
+	var password = document.getElementById('passwordEdit').value;
+	var rol = document.getElementById('rolEdit').value;
+	var estado = document.getElementById('estadoEdit').value;
+	var tableUsuarios = document.getElementById('tableUsers');
+
+	$.ajax({
+		url: './includes/editUsers.php',
+		method: 'POST',
+		data: {
+			usuario_id: idusuario,
+			nombre: nombre,
+			user: user,
+			password: password,
+			rol: rol,
+			estado: estado
+		},
+		success: function(data){
+			$('#alertStatusEdit').html(data);
+		}
+	})
+
+}
+
 function verifyPassword(){
 	var password = document.getElementById('password').value;
 	var confirmPassword = document.getElementById('confirmPassword').value;
@@ -98,7 +154,6 @@ function addUser(){
 		},
 		success: function(data){
 			$('#alertStatus').html(data);
-			listUsers.reload();
 		}
 
 	})
