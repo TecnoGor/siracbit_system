@@ -19,10 +19,13 @@ require_once 'templates/header.php';
   
   <div class="row">
     <div class="col-md-12">
-      <div class="tile">
+      <div class="tile" id="dashboard">
         <div class="tile-body">
           <div class="table-responsive">
-          <?php echo $_SESSION['nombre'] . "Prueba";?>
+          <?php $nombre = $_SESSION['nombre'];
+            echo '<input type="hidden" id="nombre" value="'.$nombre.'">';
+
+          ?>
             <table class="table table-hover table-bordered" id="sampleTable">
 
               <thead>
@@ -126,7 +129,14 @@ require_once 'templates/header.php';
         </div>
       </div>
     </div>
+
+    <div id="formsRecaudos">
+            
   </div>
+
+  </div>
+
+  
 </main>
 
 <?php

@@ -11,7 +11,7 @@
         
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-ui-checks"></i><span class="app-menu__label">Entrega de Recaudos</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" type="button" href="table_recaudos.php"><i class="icon bi bi-circle-fill"></i>Lista de Recaudos</a></li>
+            <li><a class="treeview-item" type="button"><i class="icon bi bi-circle-fill"></i>Lista de Recaudos</a></li>
             <li><a class="treeview-item" type="button" onclick="showForm1()"><i class="icon bi bi-circle-fill"></i> Caracterizacion del contenido educativo digitalizado</a></li>
             <li><a class="treeview-item" type="button" onclick="showForm2()"><i class="icon bi bi-circle-fill"></i> Actividades Formativas</a></li>
             <li><a class="treeview-item" type="button" onclick="showForm3()"><i class="icon bi bi-circle-fill"></i> Recursos Educativos</a></li>
