@@ -13,12 +13,12 @@
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-ui-checks"></i><span class="app-menu__label">Entrega de Recaudos</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" type="button" href="table_recaudos.php"><i class="icon bi bi-circle-fill"></i>Lista de Recaudos</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm1()"><i class="icon bi bi-circle-fill"></i> Paso 1</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm2()"><i class="icon bi bi-circle-fill"></i> Paso 2</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm3()"><i class="icon bi bi-circle-fill"></i> Paso 3</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm4()"><i class="icon bi bi-circle-fill"></i> Paso 4</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm5()"><i class="icon bi bi-circle-fill"></i> Paso 5</a></li>
-            <li><a class="treeview-item" type="button" onclick="showForm6()"><i class="icon bi bi-circle-fill"></i> Paso 6</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm1()"><i class="icon bi bi-circle-fill"></i> Caracterizacion del contenido educativo digitalizado</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm2()"><i class="icon bi bi-circle-fill"></i> Actividades Formativas</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm3()"><i class="icon bi bi-circle-fill"></i> Recursos Educativos</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm4()"><i class="icon bi bi-circle-fill"></i> Planificación del Encuentro Formativo</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm5()"><i class="icon bi bi-circle-fill"></i> Registro Fotografico</a></li>
+            <li><a class="treeview-item" type="button" onclick="showForm6()"><i class="icon bi bi-circle-fill"></i> Lista de Asistencias</a></li>
           </ul>
         </li>
 

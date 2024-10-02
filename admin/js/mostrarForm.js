@@ -2,54 +2,66 @@
 
 function showForm1(){
 
-	$.get('./forms/form1.php', function(mensaje,estado){
+	$.get('./templates/forms/form1.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
 
 function showForm2(){
 
-	$.get('./forms/form2.php', function(mensaje,estado){
+	$.get('./templates/forms/form2.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
 
 function showForm3(){
 
-	$.get('./forms/form3.php', function(mensaje,estado){
+	$.get('./templates/forms/form3.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
 
 function showForm4(){
 
-	$.get('./forms/form4.php', function(mensaje,estado){
+	$.get('./templates/forms/form4.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
 
 function showForm5(){
 
-	$.get('./forms/form5.php', function(mensaje,estado){
+	$.get('./templates/forms/form5.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
 
 function showForm6(){
 
-	$.get('./forms/form6.php', function(mensaje,estado){
+	$.get('./templates/forms/form6.php', function(mensaje,estado){
 
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 
 	})
 }
@@ -58,6 +70,8 @@ function showForm6(){
 function listUsers(){
 	$.get('./templates/usersList.php', function(mensaje, estado){
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
+
 	})
 }
 
