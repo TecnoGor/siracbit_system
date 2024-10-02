@@ -4,13 +4,18 @@ session_start();
 
 if (!empty($_POST)) {
 	if (empty($_POST['login']) || empty($_POST['pass'])) {
-		echo '<div class="alert alert-danger"><button type="button" class="btn-close" aria-label="Close" for="msjAdmin"></button>Todos los campos son necesarios</div>';
+		echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill p-1"></i>
+                            <div>
+                                Todos los campos son necesarios.
+                            </div>
+                        </div>';
 	} else {
 		require_once 'conn.php';
 		$login = $_POST['login'];
 		$pass = $_POST['pass'];
 
-		$sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.usuario = ?";
+		$sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.usuario = ? AND u.rol = 1";
 		$query = $conn->prepare($sql);
 		$query->execute(array($login));
 
@@ -32,7 +37,12 @@ if (!empty($_POST)) {
 				echo '<div class="alert alert-danger"><button type="button" class="btn-close" data-dismiss="alert"></button>Usuario o contraseña incorrectos</div>';
 			}
 		} else {
-			echo '<div class="alert alert-danger"><button type="button" class="btn-close" data-dismiss="alert"></button>Usuario o contraseña incorrectos</div>';
+			echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill p-1"></i>
+                            <div>
+                                Usuario o contraseña incorrectos.
+                            </div>
+                        </div>';
 		}
 
 	}

@@ -3,8 +3,8 @@ $(document).ready(function(){
 		loginAdmin();
 	});
 
-	$('#loginProfesor').on('click', function(){
-		loginProfesor();
+	$('#loginEscuela').on('click', function(){
+		loginEscuela();
 	});
 
 })
@@ -30,12 +30,12 @@ function loginAdmin() {
 	})
 }
 
-function loginProfesor() {
+function loginEscuela() {
 	var loginProfesor = $('#userProfesor').val();
 	var passProfesor = $('#passwordProfesor').val();
 
 	$.ajax({
-		url: './includes/loginProfesor.php',
+		url: './includes/loginEscuela.php',
 		method: 'POST',
 		data: {
 			loginProfesor:loginProfesor,
@@ -44,8 +44,8 @@ function loginProfesor() {
 		success: function(data) {
 			$('#msjProfesor').html(data);
 
-			if (data.indexOf('Redirecting') >= 0) {
-				window.location = 'prof/';
+			if (data.indexOf('Redirigiendo') >= 0) {
+				window.location = 'escuela/';
 			}
 		}
 	})

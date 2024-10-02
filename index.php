@@ -3,8 +3,9 @@
 
   if (!empty($_SESSION['active'])) {
     header('Location: admin/');
+    $_SESSION['nombre'];
   } else if (!empty($_SESSION['activeP'])) {
-    header('Location: profesor/');
+    header('Location: escuela/');
   }
 
 ?>
@@ -44,7 +45,7 @@
 
           <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-admin" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><h4>Administrador</h4></button>
 
-          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profesor" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style=""><h4>Profesor</h4></button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profesor" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style=""><h4>Escuela</h4></button>
 
         </div>
 
@@ -104,7 +105,7 @@
 
               <div class="mb-3 btn-container d-grid">
 
-                <button class="btn btn-primary btn-block" id="loginProfesor" type="button"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>INICIAR SESION</button>
+                <button class="btn btn-primary btn-block" id="loginEscuela" type="button"><i class="bi bi-box-arrow-in-right me-2 fs-5"></i>INICIAR SESION</button>
 
               </div>
 
