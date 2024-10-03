@@ -72,7 +72,7 @@ function regForm1(){
 }
 
 function regForm2(){
-
+	var user = $('#usuario').val();
 	var tRecurso = $('#input1-1').val();
 	var lElaboracion = $('#input2-1').val();
 	var fElaboracion = $('#input3-1').val();
@@ -102,6 +102,7 @@ function regForm2(){
 		url: './includes/regForm2.php',
 		method: 'POST',
 		data: {
+			user:user,
 			tRecurso:tRecurso,
 			lElaboracion:lElaboracion,
 			fElaboracion:fElaboracion,
@@ -137,7 +138,7 @@ function regForm2(){
 
 
 function regForm3(){
-
+	var user = $('#usuario').val();
 	var tRecurso = $('#input1-1').val();
 	var lElaboracion = $('#input2-1').val();
 	var fElaboracion = $('#input3-1').val();
@@ -171,6 +172,7 @@ function regForm3(){
 		url: './includes/regForm3.php',
 		method: 'POST',
 		data: {
+			user:user,
 			tRecurso:tRecurso,
 			lElaboracion:lElaboracion,
 			fElaboracion:fElaboracion,
@@ -210,7 +212,7 @@ function regForm3(){
 
 
 function regForm4(){
-
+	var user = $('#usuario').val();
 	var tRecurso = $('#input1-1').val();
 	var lElaboracion = $('#input2-1').val();
 	var fElaboracion = $('#input3-1').val();
@@ -228,6 +230,7 @@ function regForm4(){
 		url: './includes/regForm4.php',
 		method: 'POST',
 		data: {
+			user:user,
 			tRecurso:tRecurso,
 			lElaboracion:lElaboracion,
 			fElaboracion:fElaboracion,
@@ -251,7 +254,7 @@ function regForm4(){
 
 
 function regForm5(){
-
+	var user = $('#usuario').val();
 	var tRecurso = $('#input1-1').val();
 	var lElaboracion = $('#input2-1').val();
 	var fElaboracion = $('#input3-1').val();
@@ -271,6 +274,7 @@ function regForm5(){
 		url: './includes/regForm5.php',
 		method: 'POST',
 		data: {
+			user:user,
 			tRecurso:tRecurso,
 			lElaboracion:lElaboracion,
 			fElaboracion:fElaboracion,

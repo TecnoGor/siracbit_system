@@ -39,7 +39,7 @@ if(!empty($_POST)) {
 
 
 
-		$sql = "INSERT INTO caracterizacion(usuario,title_recurso, lugar_elaboracion, fecha_elaboracion, version, tipo_recurso, idioma, time_navegacion, tema_generador, nivel_educativo, age, tema_conexo, otras_areas, finalidad_educativa, tipo_archivo, tipo_procesador, v_procesador, c_minima, size_recurso, perifericos, internet, s_requerido, t_herramientas, archivo, fuente, autor, institucion, nombre_validador, i_pertenece) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		$sql = "INSERT INTO caracterizacion(usuario, title_recurso, lugar_elaboracion, fecha_elaboracion, version, tipo_recurso, idioma, time_navegacion, tema_generador, nivel_educativo, age, tema_conexo, otras_areas, finalidad_educativa, tipo_archivo, tipo_procesador, v_procesador, c_minima, size_recurso, perifericos, internet, s_requerido, t_herramientas, archivo, fuente, autor, institucion, nombre_validador, i_pertenece) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		$stmt = $conn->prepare($sql);
 		$stmt->execute([$user, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo, $tRequerido, $vProcesador, $cMinima, $sizeRecurso, $dPerifericos, $aInternet, $sRequerido, $tHerramienta, $Archivo, $Fuente, $Autor, $Institucion, $nApellidos, $iPertenece]);
 

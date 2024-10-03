@@ -38,7 +38,7 @@
                         echo "<td>".$usuario->nombre."</td>";
                         echo "<td>".$usuario->usuario."</td>";
                         echo "<td>".$usuario->nombre_rol."</td>";
-                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditUser('. $usuario->usuario_id .')"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" href="#"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
+                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditUser('. $usuario->usuario_id .')"><i class="bi bi-pencil-square fs-5"></i></a></div>' ."</td>";
                         $i++;
                     }
                 ?>
