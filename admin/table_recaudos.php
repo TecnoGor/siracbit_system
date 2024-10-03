@@ -30,6 +30,7 @@ require_once 'templates/header.php';
 
                 <tr>
                   <th>N°</th>
+                  <th>Usuario Responsable</th>
                   <th>Recaudo</th>
                   <th>Fecha de Recaudo</th>
                   <th>Acciones</th>
@@ -42,7 +43,7 @@ require_once 'templates/header.php';
                 <?php
                 include('includes/conn.php');
 
-                $sql = "SELECT caracterizacion.id as cid, caracterizacion.fecha_realizacion as cfr, act_formativas.id as acid, act_formativas.fecha_realizacion as acfr, r_educativos.id as rid, r_educativos.fecha_realizacion as rfr, eformativo.id as eid, eformativo.fecha_realizacion as efr, rfotografico.id as rfid, rfotografico.fecha_realizacion as rffr FROM caracterizacion, act_formativas, r_educativos, eformativo, rfotografico;";
+                $sql = "SELECT caracterizacion.id as cid, caracterizacion.usuario as cuser, caracterizacion.fecha_realizacion as cfr, act_formativas.id as acid, act_formativas.usuario as acuser, act_formativas.fecha_realizacion as acfr, r_educativos.id as rid, r_educativos.usuario as ruser, r_educativos.fecha_realizacion as rfr, eformativo.id as eid, eformativo.usuario as euser, eformativo.fecha_realizacion as efr, rfotografico.id as rfid, rfotografico.usuario as rfuser, rfotografico.fecha_realizacion as rffr FROM caracterizacion, act_formativas, r_educativos, eformativo, rfotografico;";
                 $stmt = $conn->query($sql);
                 $lista = $stmt->fetchAll(PDO::FETCH_OBJ);
 
@@ -54,6 +55,7 @@ require_once 'templates/header.php';
 
               <tr>
                 <td> <?php echo $i; $i++;?> </td>
+                <td> <?php echo $recaudos->cuser; ?> </td>
                 <td>Caracterizacion</td>
                 <!-- <td> <?php echo $recaudos->cid; ?> </td> -->
                 <td> <?php echo $recaudos->cfr; ?> </td>
@@ -65,6 +67,7 @@ require_once 'templates/header.php';
 
               <tr>
                 <td> <?php echo $i; $i++;?> </td>
+                <td> <?php echo $recaudos->acuser; ?> </td>
                 <td>Actividades Formativas</td>
                 <!-- <td> <?php echo $recaudos->acid; ?> </td> -->
                 <td> <?php echo $recaudos->acfr; ?> </td>
@@ -76,6 +79,7 @@ require_once 'templates/header.php';
 
               <tr>
                 <td> <?php echo $i; $i++;?> </td>
+                <td> <?php echo $recaudos->ruser; ?> </td>
                 <td>Recursos Educativos</td>
                 <!-- <td> <?php echo $recaudos->rid; ?> </td> -->
                 <td> <?php echo $recaudos->rfr; ?> </td>
@@ -87,6 +91,7 @@ require_once 'templates/header.php';
 
               <tr>
                 <td> <?php echo $i; $i++;?> </td>
+                <td> <?php echo $recaudos->euser; ?> </td>
                 <td>Planificacion del encuentro formativo</td>
                 <!-- <td> <?php echo $recaudos->eid; ?> </td> -->
                 <td> <?php echo $recaudos->efr; ?> </td>
@@ -98,6 +103,7 @@ require_once 'templates/header.php';
 
               <tr>
                 <td> <?php echo $i; $i++;?> </td>
+                <td> <?php echo $recaudos->rfuser; ?> </td>
                 <td>Registro Fotografico</td>
                 <!-- <td> <?php echo $recaudos->rfid; ?> </td> -->
                 <td> <?php echo $recaudos->rffr; ?> </td>

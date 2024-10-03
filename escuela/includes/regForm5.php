@@ -8,6 +8,7 @@ if(!empty($_POST)) {
 	} else {
 		require_once('conn.php');
 		$user = $_POST['user'];
+		$nRecaudo = "Registro Fotográfico";
 		$tRecurso = $_POST['tRecurso'];
 		$lElaboracion = $_POST['lElaboracion'];
 		$fElaboracion = $_POST['fElaboracion'];
@@ -25,9 +26,9 @@ if(!empty($_POST)) {
 
 
 
-		$sql = "INSERT INTO rfotografico(usuario, nActividad, proposito, f1Fecha, f1Nombre, f1Archivo, f2Fecha, f2Nombre, f2Archivo, f3Fecha, f3Nombre, f3Archivo, f4Fecha, f4Nombre, f4Archivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		$sql = "INSERT INTO rfotografico(usuario, nRecaudo, nActividad, proposito, f1Fecha, f1Nombre, f1Archivo, f2Fecha, f2Nombre, f2Archivo, f3Fecha, f3Nombre, f3Archivo, f4Fecha, f4Nombre, f4Archivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		$stmt = $conn->prepare($sql);
-		$stmt->execute([$user, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo]);
+		$stmt->execute([$user, $nRecaudo, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo]);
 
 		echo '<div class="alert alert-success"><button type="button" class="btn-close" data-dismiss="alert"></button>El registro se completo exitosamente</div>';
 

@@ -8,6 +8,7 @@ if(!empty($_POST)) {
 
 	} else {
 		require_once('conn.php');
+		$nRecaudo = "Lista Asistencias";
 		$user = $_POST['user'];
 		$tRecurso = $_POST['tRecurso'];
 		$lElaboracion = $_POST['lElaboracion'];
@@ -34,9 +35,9 @@ if(!empty($_POST)) {
 		$Archivo = $_POST['Archivo'];
 		$Fuente = $_POST['Fuente'];
 
-		$sql = "INSERT INTO caracterizacion(usuario, estado, municipio, parroquia, cedula, nombres, apellidos, nActividad, tActividad, fInicio, fCierre, especial, inicial, pPrimero, pSegundo, pTercero, pCuarto, pQuinto, pSexto, tPrimero, tSegundo, tTercero, tCuarto, tQuinto, docente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		$sql = "INSERT INTO caracterizacion(usuario, nRecaudo, estado, municipio, parroquia, cedula, nombres, apellidos, nActividad, tActividad, fInicio, fCierre, especial, inicial, pPrimero, pSegundo, pTercero, pCuarto, pQuinto, pSexto, tPrimero, tSegundo, tTercero, tCuarto, tQuinto, docente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		$stmt = $conn->prepare($sql);
-		$stmt->execute([$user, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo, $tRequerido, $vProcesador, $cMinima, $sizeRecurso, $dPerifericos, $aInternet, $sRequerido, $tHerramienta, $Archivo, $Fuente]);
+		$stmt->execute([$user, $nRecaudo, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo, $tRequerido, $vProcesador, $cMinima, $sizeRecurso, $dPerifericos, $aInternet, $sRequerido, $tHerramienta, $Archivo, $Fuente]);
 
 		echo '<div class="alert alert-success"><button type="button" class="btn-close" data-dismiss="alert"></button>El registro se completo exitosamente</div>';
 

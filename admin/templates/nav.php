@@ -3,7 +3,7 @@
     <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
         <div>
-          <p class="app-sidebar__user-name">Administrador</p>
+          <p class="app-sidebar__user-name"><?php echo $_SESSION['nombreUsuario'];?></p>
           <p class="app-sidebar__user-designation">Administrador</p>
         </div>
       </div>

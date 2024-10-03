@@ -9,6 +9,7 @@ if(!empty($_POST)) {
 	} else {
 		require_once('conn.php');
 		$user = $_POST['user'];
+		$nRecaudo = "Planificacion del Encuentro Formativo";
 		$tRecurso = $_POST['tRecurso'];
 		$lElaboracion = $_POST['lElaboracion'];
 		$fElaboracion = $_POST['fElaboracion'];
@@ -22,9 +23,9 @@ if(!empty($_POST)) {
 		$tConexos = $_POST['tConexos'];
 		$oAreas = $_POST['oAreas'];
 
-		$sql = "INSERT INTO eformativo(usuario, nEncuentro, tEncuentro, responsable, participantes, duracion, modalidad, fInicio, fCierre, dirigido, objetivos, ejeTematico, aAprendizaje) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		$sql = "INSERT INTO eformativo(usuario, nRecaudo, nEncuentro, tEncuentro, responsable, participantes, duracion, modalidad, fInicio, fCierre, dirigido, objetivos, ejeTematico, aAprendizaje) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		$stmt = $conn->prepare($sql);
-		$stmt->execute([$user, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas]);
+		$stmt->execute([$user, $nRecaudo, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas]);
 
 		echo '<div class="alert alert-success"><button type="button" class="btn-close" data-dismiss="alert"></button>El registro se completo exitosamente</div>';
 

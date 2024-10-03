@@ -8,6 +8,7 @@ if(!empty($_POST)) {
 	} else {
 		require_once('conn.php');
 		$user = $_POST['user'];
+		$nRecaudo = "Recursos Educativos";
 		$tRecurso = $_POST['tRecurso'];
 		$lElaboracion = $_POST['lElaboracion'];
 		$fElaboracion = $_POST['fElaboracion'];
@@ -39,9 +40,9 @@ if(!empty($_POST)) {
 
 
 
-		$sql = "INSERT INTO r_educativos(usuario, estado, rEducativo, tRecurso, fElaboracion, inicial, pPrimero, pSegundo, pTercero, pCuarto, pQuinto, pSexto, tPrimero, tSegundo, tTercero, tCuarto, tQuinto, inlineCheckbox1, inlineCheckbox2, inlineCheckbox3, inlineCheckbox4, inlineCheckbox5, inlineCheckbox6, inlineCheckbox7, inlineCheckbox8, inlineCheckbox9, inlineCheckbox10, inlineCheckbox11, docente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		$sql = "INSERT INTO r_educativos(usuario, nRecaudo, estado, rEducativo, tRecurso, fElaboracion, inicial, pPrimero, pSegundo, pTercero, pCuarto, pQuinto, pSexto, tPrimero, tSegundo, tTercero, tCuarto, tQuinto, inlineCheckbox1, inlineCheckbox2, inlineCheckbox3, inlineCheckbox4, inlineCheckbox5, inlineCheckbox6, inlineCheckbox7, inlineCheckbox8, inlineCheckbox9, inlineCheckbox10, inlineCheckbox11, docente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		$stmt = $conn->prepare($sql);
-		$stmt->execute([$user, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo, $tRequerido, $vProcesador, $cMinima, $sizeRecurso, $dPerifericos, $aInternet, $sRequerido, $tHerramienta, $Archivo, $Fuente, $Autor, $Institucion, $nApellidos, $iPertenece]);
+		$stmt->execute([$user, $nRecaudo, $tRecurso, $lElaboracion, $fElaboracion, $version, $tipoRecurso, $idioma, $tNavegacion, $tGenerador, $nEducacion, $age, $tConexos, $oAreas, $fEducativa, $tArchivo, $tRequerido, $vProcesador, $cMinima, $sizeRecurso, $dPerifericos, $aInternet, $sRequerido, $tHerramienta, $Archivo, $Fuente, $Autor, $Institucion, $nApellidos, $iPertenece]);
 
 		echo '<div class="alert alert-success"><button type="button" class="btn-close" data-dismiss="alert"></button>El registro se completo exitosamente</div>';
 
