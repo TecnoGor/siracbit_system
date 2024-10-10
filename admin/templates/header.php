@@ -19,6 +19,7 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
+     <link rel="shortcut icon" href="images/Icon_logo.png" type="image/x-icon">
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
   </head>

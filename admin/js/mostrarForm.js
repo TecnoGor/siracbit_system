@@ -1,70 +1,12 @@
 // Funciones para la creacion de recaudos
 
-function showForm1(){
-
-	$.get('./templates/forms/form1.php', function(mensaje,estado){
-
+function listRecaudos(){
+	$.get('./templates/table_recaudos.php', function(mensaje, estado){
 		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
+		document.getElementById('dashboard').style="display: none";
 	})
 }
 
-function showForm2(){
-
-	$.get('./templates/forms/form2.php', function(mensaje,estado){
-
-		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
-	})
-}
-
-function showForm3(){
-
-	$.get('./templates/forms/form3.php', function(mensaje,estado){
-
-		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
-	})
-}
-
-function showForm4(){
-
-	$.get('./templates/forms/form4.php', function(mensaje,estado){
-
-		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
-	})
-}
-
-function showForm5(){
-
-	$.get('./templates/forms/form5.php', function(mensaje,estado){
-
-		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
-	})
-}
-
-function showForm6(){
-
-	$.get('./templates/forms/form6.php', function(mensaje,estado){
-
-		document.getElementById('formsRecaudos').innerHTML=mensaje;
-		document.getElementById('dashboard').style = "display: none";
-
-
-	})
-}
 
 // Funciones para la creacion de Usuarios
 function listUsers(){
@@ -170,5 +112,12 @@ function addUser(){
 			$('#alertStatus').html(data);
 		}
 
+	})
+}
+
+function listEscuelas(){
+	$.get('./templates/schoolsList.php', function(mensaje, estado){
+		document.getElementById('formsRecaudos').innerHTML=mensaje;
+		document.getElementById('dashboard').style = "display: none";
 	})
 }

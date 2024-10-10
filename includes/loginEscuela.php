@@ -3,7 +3,7 @@
 session_start();
 
 if (!empty($_POST)) {
-	if (empty($_POST['loginProfesor']) || empty($_POST['passProfesor'])) {
+	if (empty($_POST['loginEscuela']) || empty($_POST['passEscuela'])) {
 		echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
 					<i class="bi bi-exclamation-triangle-fill p-1"></i>
 					<div>
@@ -12,8 +12,8 @@ if (!empty($_POST)) {
 				</div>';
 	} else {
 		require_once 'conn.php';
-		$login = $_POST['loginProfesor'];
-		$pass = $_POST['passProfesor'];
+		$login = $_POST['loginEscuela'];
+		$pass = $_POST['passEscuela'];
 
 		$sql = "SELECT * FROM usuarios AS u INNER JOIN rol AS r ON u.rol = r.rol_id WHERE usuario = ? AND u.rol=2";
 		$query = $conn->prepare($sql);
