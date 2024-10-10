@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('#loginAdmin').on('click', function(){
+		
 		loginAdmin();
 	});
 
@@ -10,6 +11,7 @@ $(document).ready(function(){
 })
 
 function loginAdmin() {
+	console.log("Funciona");
 	var login = $('#user').val();
 	var pass = $('#password').val();
 

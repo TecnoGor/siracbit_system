@@ -31,7 +31,8 @@
 
     <section class="login-content">
       <div class="logo">
-        <h1>SIRACBIT</h1>
+        <!-- <h1>SIRACBIT</h1> -->
+         <img src="assets/Logo.png" alt="" width="300px">
       </div>
 
 
@@ -90,9 +91,9 @@
 
           </div>
 
-          <!-- FORMULARIO DE INGRESO DE MAESTRO -->
+          <!-- FORMULARIO DE INGRESO DE ESCUELA -->
 
-          <div class="tab-pane fade" id="nav-escuela" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+          <div class="tab-pane fade" id="nav-escuela" role="tabpanel" aria-labelledby="nav-escuela-tab" tabindex="0">
 
             <form class="login-form" action="">
 
@@ -117,7 +118,7 @@
 
           </div>
 
-          <div class="tab-pane fade show active" id="nav-tecnico" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+          <div class="tab-pane fade" id="nav-tecnico" role="tabpanel" aria-labelledby="nav-tecnico-tab" tabindex="0">
             
             <form class="login-form" action="">
 
@@ -144,7 +145,7 @@
 
           </div>
 
-          <div class="tab-pane fade show active" id="nav-profesor" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+          <div class="tab-pane fade" id="nav-profesor" role="tabpanel" aria-labelledby="nav-profesor-tab" tabindex="0">
             
             <form class="login-form" action="">
 
