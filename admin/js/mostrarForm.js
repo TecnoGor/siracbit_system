@@ -121,3 +121,101 @@ function listEscuelas(){
 		document.getElementById('dashboard').style = "display: none";
 	})
 }
+
+function modalAddSchool(){
+	$('#modalAddSchool').modal('show');
+}
+
+function addSchool() {
+	var nombre = document.getElementById('plantel').value;
+	var codeDEA = document.getElementById('codeDEA').value;
+	var direccion = document.getElementById('directionSchool').value;
+	var modalidad = document.getElementsByName('modalidad');
+	var modalidadValue = [];
+	modalidad.forEach(seleccionado => {
+		if (seleccionado.checked) {
+			modalidadValue.push(seleccionado.value);
+		}
+	});
+	// console.log(modalidadValue);
+	var estatus = document.getElementById('estatus').value;
+	var niveles = JSON.stringify(modalidadValue);
+
+	$.ajax({
+		url: './includes/addSchool.php',
+		method: 'POST',
+		data: {
+			nombre: nombre,
+			codeDEA: codeDEA,
+			direccion: direccion,
+			modalidad: niveles,
+			estatus: estatus
+			},
+			success: function(data){
+				$('#alertStatus').html(data);
+			}
+	})
+
+}
+
+function modalEditSchool(a){
+	var idSchool = a;
+
+	$.ajax({
+		url: './includes/requestSchool.php',
+		method: 'POST',
+		data: {
+			id: idSchool
+		},
+		success: function(data){
+			
+			var data = JSON.parse(data);
+
+			if(data.status){
+				document.querySelector('#idOculto').value = data.data.id;
+				document.querySelector('#plantelEdit').value = data.data.plantel;
+				document.querySelector('#codeDEAEdit').value = data.data.dea;
+				document.querySelector('#directionSchoolEdit').value = data.data.direccion;
+				document.querySelector('#estatusEdit').value = data.data.estatus;
+
+				$('#modalEditSchool').modal('show');
+
+			}else {
+				swal('Atencion',data.msg,'error');
+			}
+		}
+	})
+}
+
+function editSchool() {
+	var idSchool = document.getElementById('idOculto').value;
+	var nombre = document.getElementById('plantelEdit').value;
+	var codeDEA = document.getElementById('codeDEAEdit').value;
+	var direccion = document.getElementById('directionSchoolEdit').value;
+	var estatus = document.getElementById('estatusEdit').value;
+	var modalidad = document.getElementsByName('modalidadEdit');
+	var modalidadValue = [];
+	modalidad.forEach(seleccionado => {
+		if (seleccionado.checked) {
+			modalidadValue.push(seleccionado.value);
+		}
+	});
+	var niveles = JSON.stringify(modalidadValue);
+
+	$.ajax({
+		url: './includes/editSchool.php',
+		method: 'POST',
+		data: {
+			id: idSchool,
+			nombre: nombre,
+			codeDEA: codeDEA,
+			direccion: direccion,
+			modalidad: niveles,
+			estatus: estatus
+		},
+		success: function(data){
+			$('#alertStatusEdit').html(data);
+		}
+	})
+
+}

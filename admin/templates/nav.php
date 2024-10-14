@@ -27,7 +27,7 @@
           
           <ul class="treeview-menu">
             <li><a class="treeview-item" type="button" onclick="listUsers()"><i class="icon bi bi-circle-fill"></i>Listar Usuarios</a></li>
-            <li><a class="treeview-item" type="button" onclick="listUsers()"><i class="icon bi bi-circle-fill"></i>Listar Escuelas</a></li>
+            <li><a class="treeview-item" type="button" onclick="listEscuelas()"><i class="icon bi bi-circle-fill"></i>Listar Escuelas</a></li>
           </ul>
 
         </li>

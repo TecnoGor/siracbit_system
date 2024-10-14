@@ -8,7 +8,7 @@
     <div class="tile">
         <div class="tile-title-w-btn">
             <h3 class="title">Lista de Usuarios</h3>
-            <p><a class="btn btn-primary icon-btn" onclick="modalAddUser()"><i class="bi bi-plus-square"></i>Añadir Usuario</a></p>
+            <p><a onclick="listUsers()" class="btn btn-primary icon-btn"><i class="bi bi-arrow-clockwise"></i>Actualizar</a>   <a class="btn btn-primary icon-btn" onclick="modalAddUser()"><i class="bi bi-plus-square"></i>Añadir Usuario</a></p>
         </div>
 
         <table id="tableUsers" class="table">

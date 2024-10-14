@@ -7,7 +7,7 @@
 			<h4>1. Datos de Identificacion</h4>
 			<div class="form-floating mb-3">
 
-				<?php?>
+			
 					<!-- $nombre = $_SESSION['nombre']; -->
 				<input type="hidden" name="usuario" id="usuario">
 				<input class="form-control" id="input1-1" type="text" name="tRecurso" placeholder="Titulo del recurso">

@@ -33,15 +33,15 @@ function loginAdmin() {
 }
 
 function loginEscuela() {
-	var loginProfesor = $('#userProfesor').val();
-	var passProfesor = $('#passwordProfesor').val();
+	var loginEscuela = $('#userEscuela').val();
+	var passEscuela = $('#passwordEscuela').val();
 
 	$.ajax({
 		url: './includes/loginEscuela.php',
 		method: 'POST',
 		data: {
-			loginProfesor:loginProfesor,
-			passProfesor:passProfesor
+			loginEscuela:loginEscuela,
+			passEscuela:passEscuela
 		},
 		success: function(data) {
 			$('#msjProfesor').html(data);
