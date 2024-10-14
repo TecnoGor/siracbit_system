@@ -38,6 +38,33 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="escuelaEdit">Escuela</label>
+                    <select class="form-control" name="escuelaEdit" id="escuelaEdit">
+                        <option disabled selected>Seleccione ....</option>
+                        <?php
+                        
+                        include('../includes/conn.php');
+
+                        $sqlEscuelas = "SELECT * FROM escuelas;";
+                        $stmtEscuelas = $conn->prepare($sqlEscuelas);
+                        $stmtEscuelas->execute();
+
+                        $resultEscuelas = $stmtEscuelas->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach($resultEscuelas as $escuelas){
+
+                        ?>
+
+                          <option value="<?php echo $escuelas['id'];?>"><?php echo $escuelas['plantel'];?></option>
+
+                        <?php
+
+                        }
+                        
+                        ?>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label class="form-label" for="estadoEdit">Estado</label>
                     <select class="form-control" name="estadoEdit" id="estadoEdit">
                         <option value="1">Activo</option>

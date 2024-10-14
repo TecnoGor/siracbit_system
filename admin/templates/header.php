@@ -22,6 +22,8 @@
      <link rel="shortcut icon" href="images/Icon_logo.png" type="image/x-icon">
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="css/sweetalert2.css">
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->

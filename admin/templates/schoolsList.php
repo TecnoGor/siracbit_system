@@ -7,7 +7,7 @@
 
     <div class="tile">
         <div class="tile-title-w-btn">
-            <h3 class="title">Lista de Usuarios</h3>
+            <h3 class="title">Lista de Usuarios <b id="textPrueba"></b></h3>
             <p><a onclick="listEscuelas()" class="btn btn-primary icon-btn"><i class="bi bi-arrow-clockwise"></i>Actualizar</a>   <a class="btn btn-primary icon-btn" onclick="modalAddSchool()"><i class="bi bi-plus-square"></i>Añadir Escuela</a></p>
         </div>
 
@@ -38,7 +38,7 @@
                         echo "<td>".$escuela->plantel."</td>";
                         echo "<td>".$escuela->dea."</td>";
                         echo "<td>".$escuela->nivel."</td>";
-                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditSchool('. $escuela->id .')"><i class="bi bi-pencil-square fs-5"></i></a></div>' ."</td>";
+                        echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditSchool('. $escuela->id .')"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" onclick="delSchool('. $escuela->id .')"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
                         $i++;
                     }
                 ?>

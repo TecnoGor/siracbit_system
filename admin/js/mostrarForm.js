@@ -40,6 +40,7 @@ function modalEditUser(a){
 				document.querySelector('#userEdit').value = data.data.usuario;
 				document.querySelector('#rolEdit').value = data.data.rol;
 				document.querySelector('#estadoEdit').value = data.data.estado;
+				document.querySelector('#escuelaEdit').value = data.data.escuelaId;
 
 				$('#modalEditUser').modal('show');
 
@@ -56,6 +57,7 @@ function editUser() {
 	var user = document.getElementById('userEdit').value;
 	var password = document.getElementById('passwordEdit').value;
 	var rol = document.getElementById('rolEdit').value;
+	var escuela = document.getElementById('escuelaEdit').value;
 	var estado = document.getElementById('estadoEdit').value;
 	var tableUsuarios = document.getElementById('tableUsers');
 
@@ -68,6 +70,7 @@ function editUser() {
 			user: user,
 			password: password,
 			rol: rol,
+			escuela: escuela,
 			estado: estado
 		},
 		success: function(data){
@@ -218,4 +221,46 @@ function editSchool() {
 		}
 	})
 
+}
+
+function prueba() {
+	document.getElementById('textPrueba').innerHTML = "Funciona";
+}
+
+function delSchool(a){
+	
+	var idSchool = a;
+
+swal({
+	title: "¿Estas Seguro?",
+	text: "¿Seguro que deseas eliminar esta Escuela?<br><small>Ten en cuenta que al Eliminar esta escuela eliminaras a todos los usuarios que esten asignados a la misma.</small>",
+	type: "warning",
+	showCancelButton: true,
+	confirmButtonColor: "#DD6B55",
+	confirmButtonText: "Si, eliminalo!",
+	cancelButtonText: "No, cancela por favor!",
+	closeOnConfirm: false,
+	closeOnCancel: false
+  },
+  function(isConfirm){
+	if (isConfirm) {
+		$.ajax({
+			url: './includes/delSchool.php',
+			method: 'POST',
+			data: {
+				id: idSchool
+			},
+			success: function(data){
+				if (data == 'eliminado') {
+					swal("Eliminado!", "La escuela fue eliminada con exito.", "success");
+				} if (data == 'error') {
+					swal("Error!", "Ocurrio un error al intentar eliminar esta escuela", "error");
+				}
+			}
+		})
+
+	} else {
+		  swal("Cancelado", "Cancelado correctamente", "error");
+	}
+  });
 }
