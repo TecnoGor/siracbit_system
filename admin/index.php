@@ -1,7 +1,12 @@
 <?php
 
 require_once 'templates/header.php';
+include('includes/conn.php');
 
+$sqlCount = "SELECT count(*) FROM usuarios;";
+$stmtCount = $conn->prepare($sqlCount);
+$stmtCount->execute();
+$resultCount = $stmtCount->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <main class="app-content">
@@ -27,7 +32,8 @@ require_once 'templates/header.php';
 
                   <h4>Usuarios</h4>
 
-                  <p><b>5</b></p>
+                  <p><b><?php echo $resultCount['count(*)'];?></b></p>
+
 
                 </div>
 

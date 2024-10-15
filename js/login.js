@@ -8,6 +8,10 @@ $(document).ready(function(){
 		loginEscuela();
 	});
 
+	$('#loginTecnico').on('click', function(){
+		loginTecnico();
+	})
+
 })
 
 function loginAdmin() {
@@ -48,6 +52,48 @@ function loginEscuela() {
 
 			if (data.indexOf('Redirigiendo') >= 0) {
 				window.location = 'escuela/';
+			}
+		}
+	})
+}
+
+function loginProfesor() {
+	var loginProfesor = $('#userProfesor').val();
+	var passProfesor = $('#passwordProfesor').val();
+
+	$.ajax({
+		url: './includes/loginProfesor.php',
+		method: 'POST',
+		data: {
+			loginProfesor:loginProfesor,
+			passProfesor:passProfesor
+		},
+		success: function(data) {
+			$('#msjProfesor').html(data);
+
+			if (data.indexOf('Redirigiendo') >= 0) {
+				window.location = 'profesor/';
+			}
+		}
+	})
+}
+
+function loginTecnico() {
+	var loginTecnico = $('#userTecnico').val();
+	var passTecnico = $('#passwordTecnico').val();
+
+	$.ajax({
+		url: './includes/loginTecnico.php',
+		method: 'POST',
+		data: {
+			loginTecnico:loginTecnico,
+			passTecnico:passTecnico
+		},
+		success: function(data) {
+			$('#msjProfesor').html(data);
+
+			if (data.indexOf('Redirigiendo') >= 0) {
+				window.location = 'tecnico/';
 			}
 		}
 	})

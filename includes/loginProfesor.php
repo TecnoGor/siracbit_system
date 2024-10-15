@@ -12,10 +12,10 @@ if (!empty($_POST)) {
 				</div>';
 	} else {
 		require_once 'conn.php';
-		$login = $_POST['loginEscuela'];
-		$pass = $_POST['passEscuela'];
+		$login = $_POST['loginProfesor'];
+		$pass = $_POST['passProfesor'];
 
-		$sql = "SELECT * FROM usuarios AS u INNER JOIN rol AS r ON u.rol = r.rol_id WHERE usuario = ? AND u.rol=2";
+		$sql = "SELECT * FROM usuarios AS u INNER JOIN rol AS r ON u.rol = r.rol_id WHERE usuario = ? AND u.rol=4";
 		$query = $conn->prepare($sql);
 		$query->execute(array($login));
 
@@ -23,7 +23,7 @@ if (!empty($_POST)) {
 
 		if ($query->rowCount() > 0) {
 			if (password_verify($pass, $result['clave'])) {
-				$_SESSION['activeSchool'] = true;
+				$_SESSION['activeProf'] = true;
 				$_SESSION['id_usuario'] = $result['usuario_id'];
 				$_SESSION['nombreUsuario'] = $result['nombre'];
 				$_SESSION['nombre'] = $result['usuario'];

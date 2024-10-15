@@ -26,7 +26,7 @@
 
                     include('../includes/conn.php');
 
-                    $sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.rol != 1";
+                    $sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.rol != 1 && u.rol != 2";
 
                     $stmt = $conn->query($sql);
                     $usuarios = $stmt->fetchAll(PDO::FETCH_OBJ);

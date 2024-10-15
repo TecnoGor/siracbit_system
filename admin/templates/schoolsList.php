@@ -18,6 +18,7 @@
                     <th>Plantel</th>
                     <th>Codigo DEA</th>
                     <th>Nivel / Modalidad</th>
+                    <th>Estatus</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -38,6 +39,11 @@
                         echo "<td>".$escuela->plantel."</td>";
                         echo "<td>".$escuela->dea."</td>";
                         echo "<td>".$escuela->nivel."</td>";
+                        if ($escuela->estatus == 1) {
+                            echo "<td>"."Activa"."</td>";
+                        } else {
+                            echo "<td>"."Inactiva"."</td>";
+                        }
                         echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditSchool('. $escuela->id .')"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" onclick="delSchool('. $escuela->id .')"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
                         $i++;
                     }

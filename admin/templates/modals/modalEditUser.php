@@ -31,8 +31,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="rolEdit">Rol</label>
                     <select class="form-control" name="rolEdit" id="rolEdit">
-                        <option value="1">Administrador</option>
-                        <option value="2">Escuela</option>
+                        <option value="2">Administrador escuela</option>
                         <option value="4">Profesor</option>
                         <option value="3">Técnico</option>
                     </select>
@@ -45,7 +44,7 @@
                         
                         include('../includes/conn.php');
 
-                        $sqlEscuelas = "SELECT * FROM escuelas;";
+                        $sqlEscuelas = "SELECT * FROM escuelas WHERE estatus <> 0;";
                         $stmtEscuelas = $conn->prepare($sqlEscuelas);
                         $stmtEscuelas->execute();
 

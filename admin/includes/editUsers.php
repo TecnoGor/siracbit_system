@@ -15,19 +15,9 @@
         $stmtUpdate = $conn->prepare($sqlUpdate);
         $resultUpdate = $stmtUpdate->execute();
             if ($resultUpdate) {
-                echo    '<div class="alert alert-success d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                            <div>
-                                El usuario fue actualizado correctamente.
-                            </div>
-                        </div>';
+                echo    'ok';
             }else {
-                echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill p-1"></i>
-                            <div>
-                                Error al actualizar el usuario.
-                            </div>
-                        </div>';
+                echo    'error';
             }
 
     }else {
@@ -35,19 +25,9 @@
         $stmtUpdate = $conn->prepare($sqlUpdate);
         $resultUpdate = $stmtUpdate->execute();
             if ($resultUpdate) {
-                echo    '<div class="alert alert-success d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                            <div>
-                                El usuario fue actualizado correctamente.
-                            </div>
-                        </div>';
+                echo    'ok';
             }else {
-                echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill p-1"></i>
-                            <div>
-                                Error al actualizar el usuario.
-                            </div>
-                        </div>';
+                echo    'error';
             }
     }
 

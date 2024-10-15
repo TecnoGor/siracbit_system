@@ -152,6 +152,31 @@ function verifyPassword(){
 	}
 }
 
+function verifyDea(){
+	var dea = document.getElementById('deaSchool').value;
+	$.ajax({
+		url: './includes/verifyDea.php',
+		method: 'POST',
+		data: {
+			dea: dea
+		},
+		success: function(data){
+			if (data == 'ok') {
+				document.getElementById('deaSchool').style = "border-color:green;";
+			} if (data == 'error') {
+				swal({
+					title: 'Codigo DEA Incorrecto',
+				    text: "Verifique que el codigo DEA sea el correcto.",
+					type: 'warning',
+					showCancelButton: false,
+					confirmButtonText: 'OK',
+					closeOnConfirm: false
+				});
+			}
+		}
+	})
+}
+
 function addUser(){
 	var listado = document.getElementById('tableUsers');
 	var nombre = document.getElementById('nameUser').value;
@@ -159,6 +184,7 @@ function addUser(){
 	var password = document.getElementById('password').value;
 	var rol = document.getElementById('rol').value;
 	var estado = document.getElementById('estado').value;
+	var dea = document.getElementById('deaSchool').value;
 
 	$.ajax({
 		url: './includes/addUser.php',

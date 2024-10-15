@@ -35,8 +35,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="rol">Rol</label>
                     <select class="form-control" name="rol" id="rol">
-                        <option value="1">Administrador</option>
-                        <option value="2">Escuela</option>
+                        <option value="2">Administrador de escuela</option>
                         <option value="4">Profesor</option>
                         <option value="3">Técnico</option>
                     </select>
@@ -47,6 +46,10 @@
                         <option value="1">Activo</option>
                         <option value="0">Inactivo</option>
                     </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Codigo DEA de la Escuela:</label>
+                  <input type="text" name="deaSchool" id="deaSchool" onblur="verifyDea()" class="form-control">
                 </div>
               </form>
             </div>

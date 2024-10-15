@@ -2,7 +2,7 @@
 
   session_start();
 
-  if(empty($_SESSION['activeP'])) {
+  if(empty($_SESSION['activeSchool'])) {
     header('Location: ../');
   }
 

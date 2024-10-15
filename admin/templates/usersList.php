@@ -18,6 +18,7 @@
                     <th>Nombre y Apellido</th>
                     <th>Usuario</th>
                     <th>Rol</th>
+                    <th>Estatus</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -26,7 +27,7 @@
 
                     include('../includes/conn.php');
 
-                    $sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.rol <> 1 AND u.rol <> 3 AND u.rol <> 4";
+                    $sql = "SELECT * FROM usuarios as u INNER JOIN rol as r ON u.rol = r.rol_id WHERE u.rol <> 1";
 
                     $stmt = $conn->query($sql);
                     $usuarios = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -38,6 +39,11 @@
                         echo "<td>".$usuario->nombre."</td>";
                         echo "<td>".$usuario->usuario."</td>";
                         echo "<td>".$usuario->nombre_rol."</td>";
+                        if ($usuario->estado == 1) {
+                            echo "<td>"."Activo"."</td>";
+                        } else {
+                            echo "<td>"."Inactivo"."</td>";
+                        }
                         echo "<td>". '<div class="btn-group"><a class="btn btn-primary" onclick="modalEditUser('. $usuario->usuario_id .')"><i class="bi bi-pencil-square fs-5"></i></a><a class="btn btn-primary" href="#"><i class="bi bi-trash fs-5"></i></a></div>' ."</td>";
                         $i++;
                     }

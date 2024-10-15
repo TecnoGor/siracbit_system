@@ -74,7 +74,25 @@ function editUser() {
 			estado: estado
 		},
 		success: function(data){
-			$('#alertStatusEdit').html(data);
+			if (data == 'ok') {
+				swal({
+					title: 'Editado con Exito!',
+				    text: "El usuario fue editado correctamente.",
+					type: 'success',
+					showCancelButton: false,
+					confirmButtonText: 'OK',
+					closeOnConfirm: false
+				});
+			} if (data == 'error') {
+				swal({
+					title: 'Error!',
+				    text: "Ocurrio un error mientras se editaba el usuario.",
+					type: 'error',
+					showCancelButton: false,
+					confirmButtonText: 'OK',
+					closeOnConfirm: false
+				});
+			}
 		}
 	})
 
@@ -94,12 +112,12 @@ function verifyPassword(){
 }
 
 function addUser(){
-	var listado = document.getElementById('tableUsers');
 	var nombre = document.getElementById('nameUser').value;
 	var user = document.getElementById('user').value;
 	var password = document.getElementById('password').value;
 	var rol = document.getElementById('rol').value;
 	var estado = document.getElementById('estado').value;
+	var dea = document.getElementById('deaSchool').value;
 
 	$.ajax({
 		url: './includes/addUser.php',
@@ -109,12 +127,41 @@ function addUser(){
 			user: user,
 			password: password,
 			rol: rol,
-			estado: estado
+			estado: estado,
+			dea: dea
 		},
 		success: function(data){
 			$('#alertStatus').html(data);
 		}
 
+	})
+}
+
+function verifyDea(){
+	var dea = document.getElementById('deaSchool').value;
+	console.log(dea);
+	$.ajax({
+		url: './includes/verifyDea.php',
+		method: 'POST',
+		data: {
+			dea: dea
+		},
+		success: function(data){
+			console.log(data);
+			if (data == 'ok') {
+				document.getElementById('deaSchool').style = "border-color:green;";
+			} if (data == 'error') {
+				swal({
+					title: 'Codigo DEA Incorrecto',
+				    text: "Verifique que el codigo DEA sea el correcto (En tal caso que sea asi, verifique que la escuela se encuentre activa).",
+					type: 'warning',
+					showCancelButton: false,
+					confirmButtonText: 'OK',
+					closeOnConfirm: false
+				});
+				document.getElementById('deaSchool').style = "border-color:red;";
+			}
+		}
 	})
 }
 
