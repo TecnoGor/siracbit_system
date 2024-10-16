@@ -12,6 +12,11 @@ $(document).ready(function(){
 		loginTecnico();
 	})
 
+	$('#loginProfesor').on('click', function(){
+		loginProfesor();
+	})
+
+
 })
 
 function loginAdmin() {

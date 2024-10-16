@@ -3,7 +3,7 @@
 session_start();
 
 if (!empty($_POST)) {
-	if (empty($_POST['loginEscuela']) || empty($_POST['passEscuela'])) {
+	if (empty($_POST['loginProfesor']) || empty($_POST['passProfesor'])) {
 		echo    '<div class="alert alert-danger d-flex align-items-center" role="alert">
 					<i class="bi bi-exclamation-triangle-fill p-1"></i>
 					<div>
